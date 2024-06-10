@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Content="Todo List" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="612" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <DataGrid Name="todoList" SelectionChanged="todoList_SelectionChanged" AutoGenerateColumns="False" ItemsSource="{Binding ToDoItems1}" Margin="111,39,83,38">
+                <DataGrid Name="todoList" SelectionChanged="todoList_SelectionChanged" AutoGenerateColumns="False" ItemsSource="{Binding ToDoItems1}" Margin="111,39,83,38" >
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn Header="Completed" Binding="{Binding IsCompleted}" />
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
@@ -39,7 +39,7 @@
                     </DataGrid.Columns>
                     <DataGrid.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Make it first" Click="MenuItem_Click_3" />
+                            <MenuItem Header="Make it first" Click="MenuItem_Click_3"/>
                             <MenuItem Header="Delete" Click="MenuItem_Click"/>
                             <MenuItem Header="Update" Click="MenuItem_Click_1"/>
                         </ContextMenu>

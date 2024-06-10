@@ -22,7 +22,7 @@ namespace WpfAppTODO
         public AddToDoItem()
         {
             InitializeComponent();
-            //todoList.ItemsSource = AlleListen.ToDoItems1;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,6 +37,9 @@ namespace WpfAppTODO
                         DateTime date2 = date.SelectedDate ?? DateTime.Today;
                         AlleListen.ToDoItems1.Add( new ToDoItems(id, txtbxSubject.Text, txtbxDescription.Text, date.SelectedDate.Value));
                         AlleListen.aktuellenTODOList();
+                        AlleListen.aktuellenDatei();
+                        AlleListen.Grid.ItemsSource = null;
+                        AlleListen.Grid.ItemsSource = AlleListen.ToDoItems1;
                         MessageBox.Show("Added to be done");
                         
                         this.Close();

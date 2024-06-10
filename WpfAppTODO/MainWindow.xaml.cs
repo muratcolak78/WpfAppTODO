@@ -25,7 +25,7 @@ namespace WpfAppTODO
             todoList.ItemsSource = AlleListen.ToDoItems1;
 
         }
-
+        //ausgewählte Aufgabe löschen
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             int id = AlleListen.TodolistIndex;
@@ -44,7 +44,7 @@ namespace WpfAppTODO
         {
             
         }
-
+        //eine Aufgabe hinzufügen
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddToDoItem addWindow = new AddToDoItem();
@@ -57,7 +57,7 @@ namespace WpfAppTODO
             }
            
         }
-
+        //Auswählung eines Eintrags aus der Liste
         private void todoList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (todoList.SelectedItem is ToDoItems items)
@@ -67,7 +67,7 @@ namespace WpfAppTODO
 
             }
         }
-
+        //ausgewählte Aufgabe primäre machen
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             int id = AlleListen.TodolistIndex-1;
@@ -78,5 +78,6 @@ namespace WpfAppTODO
 
 
         }
+
     }
 }
