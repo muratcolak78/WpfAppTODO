@@ -22,7 +22,7 @@ namespace WpfAppTODO
         public AddToDoItem()
         {
             InitializeComponent();
-            todoList.ItemsSource = AlleListen.ToDoItems1;
+            //todoList.ItemsSource = AlleListen.ToDoItems1;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,16 +31,16 @@ namespace WpfAppTODO
             {
                 if (txtbxDescription.Text != "")
                 {
-                    if (!date.SelectedDate.HasValue)
+                    if (date.SelectedDate.HasValue)
                     {
                         int id = AlleListen.ToDoItems1.Count() + 1;
                         DateTime date2 = date.SelectedDate ?? DateTime.Today;
-                        AlleListen.ToDoItems1.Add( new ToDoItems(id, txtbxSubject.Text, txtbxDescription.Text, date2));
-                        AlleListen.aktuellenDatei();
-                        AlleListen.aktullenGridData();
+                        AlleListen.ToDoItems1.Add( new ToDoItems(id, txtbxSubject.Text, txtbxDescription.Text, date.SelectedDate.Value));
+                        AlleListen.aktuellenTODOList();
                         MessageBox.Show("Added to be done");
-
+                        
                         this.Close();
+                        
                     }
                     else MessageBox.Show("Date cannot be empty");
 
@@ -49,5 +49,7 @@ namespace WpfAppTODO
             }
             else MessageBox.Show("Subject cannot be empty");
         }
+
+       
     }
 }
